@@ -1,0 +1,19 @@
+file:
+  /go/hello:
+    exists: true
+    mode: "0755"
+    size: 7384741
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+process:
+  hello:
+    running: true
+http:
+  http://localhost:8080/hello:
+    status: 200
+    allow-insecure: false
+    no-follow-redirects: false
+    timeout: 0
+    body: []
