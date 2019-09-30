@@ -14,6 +14,7 @@ all:
 test:
 	golint ./app/
 	go test ./app/
+	go build -o ./app/hello ./app/hello.go
 
 build:
 	docker build -t ${image}  -f build/Dockerfile .

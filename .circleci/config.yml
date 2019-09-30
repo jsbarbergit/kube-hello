@@ -14,3 +14,11 @@ jobs:
       - run:
           name: Lint Test
           command: golint app/
+
+      - run:
+          name: Unit Test
+          command: go test ./app/
+
+      - run:
+          name: Build Artefact
+          command: go build -o ./app/hello ./app/hello.go
