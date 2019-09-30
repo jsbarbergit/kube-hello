@@ -1,0 +1,24 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.13
+    working_directory: /go/src/github.com/jsbarbergit/kube-hello
+    steps:
+      - checkout
+
+      - run: 
+          name: Install golint package
+          command: go get -u golang.org/x/lint/golint
+
+      - run:
+          name: Lint Test
+          command: golint app/
+
+      - run:
+          name: Unit Test
+          command: go test ./app/
+
+      - run:
+          name: Build Artefact
+          command: go build -o ./app/hello ./app/hello.go
