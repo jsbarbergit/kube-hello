@@ -1,0 +1,23 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-hello
+  namespace: kube-hello
+  labels:
+    app: kube-hello
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kube-hello
+  template:
+    metadata:
+      labels:
+        app: kube-hello
+    spec:
+      containers:
+      - name: kube-hello
+        image: johnbarber/kube-hello:ee
+        ports:
+        - containerPort: 8080
