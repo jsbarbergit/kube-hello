@@ -7,6 +7,10 @@ jobs:
     steps:
       - checkout
 
+      - run: 
+          name: Install golint package
+          command: go get -u golang.org/x/lint/golint
+
       - run:
           name: Lint Test
           command: golint app/
