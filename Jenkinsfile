@@ -13,7 +13,8 @@ agent { label 'ecsagent' }
       steps {
         sh 'docker build -t johnbarber/kube-hello -f build/Dockerfile .'
       }
-    },
+    }
+    
     stage('Test') {
       steps {
         sh 'pushd ${pwd}/build && docker run --rm -it -v ${pwd}/build:/src -v /var/run/docker.sock:/var/run/docker.sock iorubs/dgoss run johnbarber/kube-hello && popd'
