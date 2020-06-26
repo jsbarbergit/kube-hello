@@ -15,6 +15,12 @@ agent { label 'ecsagent' }
       }
     }
 
+    stage('DEBUG') {
+      steps {
+        sh 'ls -ail && cd build && ls -ail'
+      }
+    }
+
     stage('Test') {
       steps {
         sh 'cd build && docker run --rm -v ./build:/src -v /var/run/docker.sock:/var/run/docker.sock iorubs/dgoss run johnbarber/kube-hello'
