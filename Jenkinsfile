@@ -11,7 +11,7 @@ agent { label 'ecsagent' }
   stages {
     stage('Build') {
       steps {
-        sh 'make docker-build"'
+        sh 'make docker-build'
       }
     }
   }
