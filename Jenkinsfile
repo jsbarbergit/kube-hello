@@ -17,7 +17,7 @@ agent { label 'ecsagent' }
 
     stage('Test') {
       steps {
-        sh 'pwd && ls -ail && cd build/ && docker run --rm -it -v $(pwd):/src -v /var/run/docker.sock:/var/run/docker.sock iorubs/dgoss run johnbarber/kube-hello'
+        sh 'pwd && ls -ail && cd build/ && docker run --rm -v $(pwd):/src -v /var/run/docker.sock:/var/run/docker.sock iorubs/dgoss run johnbarber/kube-hello'
       }
     }
   }
