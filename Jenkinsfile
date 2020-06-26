@@ -11,7 +11,7 @@ agent { label 'ecsagent' }
   stages {
     stage('Hello') {
       steps {
-        sh 'echo "HELLOWORLD'
+        sh 'echo "HELLOWORLD"'
       }
     }
   }
