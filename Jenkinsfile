@@ -11,11 +11,11 @@ agent { label 'ecsagent' }
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t johnbarber/kube-hello -f build/Dockerfile .'
+        sh 'curl http://169.254.169.254/latest/meta-data/iam/info'
       }
     }
 
-    stage('Test') {
+    stage('Test new container') {
       steps {
         sh 'docker run --rm -v /var/run/docker.sock:/var/run/docker.sock nginx:alpine curl http://169.254.169.254/latest/meta-data/iam/info'
       }
