@@ -26,7 +26,7 @@ agent { label 'ecsagent' }
     //   }
     stage('Access metadata from ecs task') {
       steps {
-        sh 'echo "hello world && sleep 300"'
+        sh 'echo "hello world" && sleep 300'
       }
     }
   }
