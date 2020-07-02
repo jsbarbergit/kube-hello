@@ -26,19 +26,10 @@ agent { label 'ecsagent' }
     //   }
     stage('Say Hello') {
       steps {
-        sh 'echo "hello world"'
+        sh 'echo "hello world'
       }
     }
-    stage('first sleep 2m') {
-      steps {
-        sh 'sleep 120'
-      }
-    }
-    stage('second sleep 2m') {
-      steps {
-        sh 'sleep 120'
-      }
-    }
+
     stage('Say Goodby') {
       steps {
         sh 'echo "bye bye"'
