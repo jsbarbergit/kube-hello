@@ -1,5 +1,5 @@
 pipeline {
-agent { label 'ecsagent' }
+agent { label 'go' }
 
   environment {
     AWS_REGION           = "eu-west-2"
