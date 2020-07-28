@@ -3,7 +3,7 @@ pipeline {
   agent {
     node { 
     label 'go'
-    customWorkspace '/mnt/shared_workspace/'
+    customWorkspace '/mnt/shared_workspace/jbtest'
     }
   }
 
