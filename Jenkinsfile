@@ -3,7 +3,7 @@ pipeline {
   agent {
     node { 
     label 'go'
-    customWorkspace '/mnt/shared_workspace'
+    customWorkspace '/mnt/shared_workspace/'
     }
   }
 
@@ -52,7 +52,10 @@ pipeline {
 
     stage('Say Goodby') {
       steps {
-        sh 'echo "bye bye"'
+        sh '''
+          echo "bye bye"
+          env
+        '''        
       }
     }
   }
