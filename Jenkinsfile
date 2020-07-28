@@ -2,8 +2,7 @@ pipeline {
   
   agent {
     node { 
-    label 'go'
-    customWorkspace "/mnt/shared_workspace/${JOB_NAME}/${BUILD_NUMBER}"
+      label 'go'
     }
   }
 
