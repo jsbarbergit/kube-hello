@@ -3,12 +3,13 @@ pipeline {
   agent {
     node { 
       label 'go'
-      customWorkspace "/mnt/shared_workspace/${JOB_NAME}/${GIT_COMMIT}/${BUILD_NUMBER}"
+      customWorkspace "/mnt/shared_workspace/${JOB_NAME}/${GIT_BRANCH}/${BUILD_NUMBER}"
     }
   }
 
   environment {
     AWS_REGION           = "eu-west-2"
+    
 
   }
 
