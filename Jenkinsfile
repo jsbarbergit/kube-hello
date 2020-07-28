@@ -32,7 +32,12 @@ pipeline {
     //   }
     stage('Say Hello') {
       steps {
-        sh 'echo "hello world"'
+        sh '''
+          echo "hello world"
+          pwd
+          ls -ail 
+          ls -ail /mnt/shared_workspace
+        '''
       }
     }
     stage('docker-test') {
