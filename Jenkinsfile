@@ -36,7 +36,6 @@ pipeline {
           echo "hello world"
           pwd
           ls -ail 
-          ls -ail /mnt/shared_workspace
         '''
       }
     }
@@ -54,7 +53,6 @@ pipeline {
       steps {
         sh '''
           echo "bye bye"
-          env
         '''        
       }
     }
