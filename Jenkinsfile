@@ -30,11 +30,13 @@ agent { label 'ecsagent' }
       }
     }
     stage('docker-test') {
-      sh '''
-        pwd
-        ls -ail 
-        docker run --rm -v  $(pwd):/data cytopia/ansible ls -ail
-      '''
+      steps {
+        sh '''
+          pwd
+          ls -ail 
+          docker run --rm -v  $(pwd):/data cytopia/ansible ls -ail
+        '''
+      }
     }
 
     stage('Say Goodby') {
