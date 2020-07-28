@@ -3,7 +3,7 @@ pipeline {
   agent {
     node { 
       label 'go'
-      customWorkspace "/mnt/shared_workspace/${JOB_NAME}/${GIT_BRANCH}/${BUILD_NUMBER}"
+      customWorkspace "/mnt/shared_workspace/${JOB_NAME}/${env.GIT_BRANCH}/${BUILD_NUMBER}"
     }
   }
 
