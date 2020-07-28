@@ -29,16 +29,14 @@ agent { label 'ecsagent' }
         sh 'echo "hello world"'
       }
     }
-    stage('first sleep 2m') {
-      steps {
-        sh 'sleep 120'
-      }
+    stage('docker-test') {
+      sh '''
+        pwd
+        ls -ail 
+        docker run --rm -v  $(pwd):/data cytopia/ansible ls -ail
+      '''
     }
-    stage('second sleep 2m') {
-      steps {
-        sh 'sleep 120'
-      }
-    }
+
     stage('Say Goodby') {
       steps {
         sh 'echo "bye bye"'
