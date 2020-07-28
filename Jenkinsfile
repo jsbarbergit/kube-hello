@@ -1,8 +1,10 @@
 pipeline {
   
-  agent { 
+  agent {
+    node { 
     label 'go'
     customWorkspace '/mnt/shared_workspace'
+    }
   }
 
   environment {
