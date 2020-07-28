@@ -3,7 +3,7 @@ pipeline {
   agent {
     node { 
       label 'go'
-      customWorkspace "/mnt/shared_workspace/${JOB_NAME}/${GIT_COMMIT}/${BUILD_NUMBER}"
+      customWorkspace "/mnt/shared_workspace/${JOB_NAME}/${BUILD_NUMBER}"
     }
   }
 
@@ -34,8 +34,7 @@ pipeline {
       steps {
         sh '''
           echo "hello world"
-          pwd
-          ls -ail 
+          env | sort -u
         '''
       }
     }
